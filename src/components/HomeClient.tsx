@@ -78,8 +78,8 @@ function HomeClient({ email }: { email: string }) {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -6 }}
                                         className='absolute right-0 mt-3 w-44 bg-white rounded-xl shadow-xl border border-zinc-200 overflow-hidden'>
-                                        <button className='w-full text-left px-4 py-3 text-sm hover:bg-zinc-100'>Dashboard</button>
-                                        <button className='block px-4 py-3 text-sm text-red-600 hover:bg-zinc-100'>Logout</button>
+                                        <button className='w-full text-left px-4 py-3 text-sm hover:bg-zinc-100' onClick={() => navigate.push("/dashboard")}>Dashboard</button>
+                                        <button className='block px-4 py-3 text-sm text-red-600 hover:bg-zinc-100' onClick={handleLogOut}>Logout</button>
                                     </motion.div>)}
                             </AnimatePresence>
 
