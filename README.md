@@ -1,36 +1,202 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Supportly 🚀
 
-## Getting Started
+Supportly is an AI-powered customer support platform that helps businesses create, train, and embed intelligent AI chat assistants directly into their websites.
 
-First, run the development server:
+Built with modern web technologies and Google Gemini AI, Supportly enables businesses to automate customer interactions, provide instant responses, and improve customer support efficiency using custom business knowledge.
+
+---
+
+## ✨ Features
+
+### 🔐 Authentication
+- Secure authentication with Scalekit
+- Protected dashboard routes
+- Session management
+- Login & logout functionality
+
+### 🤖 AI Customer Support
+- AI-powered responses using Google Gemini
+- Custom AI knowledge training
+- FAQ and support information handling
+- 24/7 automated customer support
+- Business-specific AI assistant behavior
+
+### 🌐 Embeddable Chat Widget
+- Lightweight embeddable chatbot script
+- Easy website integration
+- Plug-and-play setup
+- Works across modern websites
+
+### 📊 Dashboard Management
+- Configure business information
+- Manage support email and AI knowledge
+- Save and update chatbot settings
+- Real-time AI configuration experience
+
+### 🎨 Modern SaaS UI
+- Responsive design
+- Smooth animations
+- Modern dark theme
+- Glassmorphism-inspired interface
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+- Next.js 16
+- TypeScript
+- Tailwind CSS
+- Motion
+
+## Backend & AI
+- Next.js API Routes
+- MongoDB
+- Mongoose
+- Google Gemini API
+
+## Authentication
+- Scalekit
+
+## Deployment
+- Vercel
+
+---
+
+# 📂 Folder Structure
+
+```bash
+supportly/
+├── public/
+│   └── chatBot.js
+│
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── auth/
+│   │   │   │   ├── callback/
+│   │   │   │   ├── login/
+│   │   │   │   └── logout/
+│   │   │   │
+│   │   │   ├── chat/
+│   │   │   └── settings/
+│   │   │
+│   │   ├── dashboard/
+│   │   ├── embed/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   │
+│   ├── components/
+│   │   ├── DashboardClient.tsx
+│   │   ├── EmbedClient.tsx
+│   │   └── HomeClient.tsx
+│   │
+│   ├── lib/
+│   │
+│   ├── model/
+│   ├── proxy.ts
+│   └── types.d.ts
+│
+├── .env.local
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+# ⚙️ Environment Variables
+
+Create a `.env.local` file in the root directory.
+
+```env
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+MONGODB_URI=your_mongodb_connection_string
+
+GEMINI_API_KEY=your_gemini_api_key
+
+SCALEKIT_CLIENT_ID=your_scalekit_client_id
+SCALEKIT_CLIENT_SECRET=your_scalekit_client_secret
+SCALEKIT_ENVIRONMENT_URL=your_scalekit_env_url
+```
+
+---
+
+# 🚀 Getting Started
+
+## Clone the repository
+
+```bash
+git clone https://github.com/abhishek-kr01/supportly.git
+```
+
+## Navigate into the project
+
+```bash
+cd supportly
+```
+
+## Install dependencies
+
+```bash
+npm install
+```
+
+## Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# 🧠 How Supportly Works
 
-To learn more about Next.js, take a look at the following resources:
+1. Businesses configure their AI support assistant.
+2. Business knowledge is stored inside MongoDB.
+3. Customers interact with the embeddable chatbot widget.
+4. Google Gemini generates AI responses using business information.
+5. Businesses can update and manage chatbot settings anytime.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 🌟 Future Improvements
 
-## Deploy on Vercel
+- Real-time AI streaming responses
+- Chat history management
+- Multi-tenant SaaS architecture
+- AI analytics dashboard
+- Team collaboration support
+- Billing & subscriptions
+- Multi-language AI support
+- File & document AI training
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 📌 Project Status
+
+🚧 Currently under active development.
+
+Supportly is being built as a modern AI SaaS product focused on simplifying customer support automation for businesses.
+
+---
+
+# 👨‍💻 Author
+
+Built by Abhishek Kumar
+
+GitHub: https://github.com/abhishek-kr01
+
+---
+
+# ⭐ Support
+
+If you like this project, consider giving it a star on GitHub.
