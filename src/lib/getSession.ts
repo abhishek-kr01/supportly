@@ -16,8 +16,5 @@ export async function getSession() {
     } catch (error) {
         console.log(error)
     }
-
-    console.log(token)
     
-    // const user = 
 }
