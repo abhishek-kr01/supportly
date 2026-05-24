@@ -17,16 +17,16 @@ function HomeClient({ email }: { email: string }) {
 
     const features = [
         {
-            title: "Plug & Play Setup",
-            desc: "Integrate your AI chatbot into any website instantly with just one script tag."
+            title: "Embed Anywhere",
+            desc: "Add Supportly to any website with a lightweight script and start supporting customers instantly."
         },
         {
-            title: "Train With Your Data",
-            desc: "Teach the chatbot using your business FAQs, policies, delivery info, and support details."
+            title: "Custom AI Knowledge",
+            desc: "Train your chatbot using FAQs, policies, support docs, and business information."
         },
         {
-            title: "24/7 AI Support",
-            desc: "Deliver instant customer support anytime without manual intervention."
+            title: "Always Available",
+            desc: "Provide instant AI-powered customer support 24/7 without human intervention."
         }
     ]
 
@@ -101,7 +101,7 @@ function HomeClient({ email }: { email: string }) {
                         <div>
 
                             <h1 className='text-xl font-semibold tracking-tight'>
-                                SupportAI
+                                Supportly
                             </h1>
 
                             <p className='text-xs text-zinc-400'>
@@ -223,18 +223,17 @@ function HomeClient({ email }: { email: string }) {
 
                         <h1 className='text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight'>
 
-                            The Future Of <br />
+                            Automate Customer <br />
 
                             <span className='bg-gradient-to-r from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text'>
-                                AI Customer Support
+                                Support With AI
                             </span>
 
                         </h1>
 
                         <p className='mt-8 text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed'>
 
-                            Build and deploy your own AI-powered customer support chatbot
-                            in minutes using your business knowledge.
+                            Create an AI support assistant trained on your business knowledge, FAQs, and policies in minutes.
 
                         </p>
 
@@ -435,7 +434,7 @@ function HomeClient({ email }: { email: string }) {
                         </div>
 
                         <h2 className='text-4xl md:text-6xl font-bold tracking-tight'>
-                            Why Businesses Choose SupportAI
+                            Everything You Need To Automate Support
                         </h2>
 
                         <p className='mt-6 text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed'>
@@ -497,7 +496,7 @@ function HomeClient({ email }: { email: string }) {
                     <div>
 
                         <h2 className='font-semibold text-lg'>
-                            SupportAI
+                            Supportly
                         </h2>
 
                         <p className='text-sm text-zinc-500 mt-1'>
@@ -507,7 +506,7 @@ function HomeClient({ email }: { email: string }) {
                     </div>
 
                     <p className='text-sm text-zinc-500'>
-                        © {new Date().getFullYear()} SupportAI. All rights reserved.
+                        © {new Date().getFullYear()} Supportly. All rights reserved.
                     </p>
 
                 </div>

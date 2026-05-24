@@ -65,7 +65,7 @@ function EmbedClient({ ownerId }: { ownerId: string }) {
                         <div>
 
                             <h1 className='text-xl font-semibold tracking-tight'>
-                                SupportAI
+                                Supportly
                             </h1>
 
                             <p className='text-xs text-zinc-400'>
@@ -107,18 +107,17 @@ function EmbedClient({ ownerId }: { ownerId: string }) {
 
                             <span className='w-2 h-2 rounded-full bg-green-400 animate-pulse'></span>
 
-                            One Step Integration
+                            Quick Website Integration
 
                         </div>
 
                         <h1 className='text-4xl md:text-5xl font-bold tracking-tight leading-tight'>
-                            Embed Your <br />
-                            AI ChatBot
+                            Add AI <br />
+                            Support To Your Website
                         </h1>
 
                         <p className='text-zinc-400 mt-5 text-lg leading-relaxed max-w-2xl'>
-                            Copy the script below and paste it into your website
-                            before the closing body tag to activate your AI support assistant.
+                            Copy and paste the script below into your website to launch your AI-powered customer support assistant.
                         </p>
 
                     </div>
@@ -199,7 +198,7 @@ function EmbedClient({ ownerId }: { ownerId: string }) {
                                 </h2>
 
                                 <p className='text-zinc-500 mt-2'>
-                                    Complete setup in less than 1 minute
+                                    Launch your AI chatbot in minutes
                                 </p>
 
                             </div>
@@ -209,18 +208,18 @@ function EmbedClient({ ownerId }: { ownerId: string }) {
                                 {[
                                     {
                                         step: "01",
-                                        title: "Copy Script",
-                                        desc: "Copy the embed code from above."
+                                        title: "Copy Embed Code",
+                                        desc: "Copy the Supportly script generated for your website."
                                     },
                                     {
                                         step: "02",
-                                        title: "Paste Into Website",
-                                        desc: "Add the script before the closing body tag."
+                                        title: "Add To Website",
+                                        desc: "Paste the script before the closing body tag in your website."
                                     },
                                     {
                                         step: "03",
-                                        title: "Go Live",
-                                        desc: "Reload your website and start using AI support."
+                                        title: "Launch AI Support",
+                                        desc: "Reload your website and start assisting visitors instantly."
                                     }
                                 ].map((item, index) => (
 
@@ -266,7 +265,7 @@ function EmbedClient({ ownerId }: { ownerId: string }) {
                                 </h2>
 
                                 <p className='text-zinc-500 mt-2'>
-                                    This is how the chatbot will appear on your website.
+                                    Preview how Supportly will appear to your website visitors.
                                 </p>
 
                             </div>

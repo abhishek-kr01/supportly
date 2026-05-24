@@ -144,7 +144,7 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
             <div>
 
               <h1 className='text-xl font-semibold tracking-tight'>
-                SupportAI
+                Supportly
               </h1>
 
               <p className='text-xs text-zinc-400'>
@@ -186,18 +186,17 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
 
               <span className='w-2 h-2 rounded-full bg-green-400 animate-pulse'></span>
 
-              AI ChatBot Configuration
+              AI Support Workspace
 
             </div>
 
             <h1 className='text-4xl md:text-5xl font-bold tracking-tight leading-tight'>
-              Configure Your <br />
-              AI ChatBot
+              Train Your <br />
+              AI Support Assistant
             </h1>
 
             <p className='text-zinc-400 mt-5 text-lg leading-relaxed max-w-2xl'>
-              Train your AI support assistant using business details,
-              FAQs, delivery information, refund policies, and custom knowledge.
+              Provide your business information, FAQs, policies, and support details to create an AI assistant tailored to your customers.
             </p>
 
           </div>
@@ -215,7 +214,7 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
                 </h2>
 
                 <p className='text-zinc-500 mt-2'>
-                  Basic information your AI assistant will use while responding.
+                  These details help your AI assistant provide accurate customer responses.
                 </p>
 
               </div>
@@ -266,12 +265,11 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
               <div className='mb-8'>
 
                 <h2 className='text-2xl font-semibold'>
-                  Knowledge Base
+                  AI Training Knowledge
                 </h2>
 
                 <p className='text-zinc-500 mt-2 leading-relaxed'>
-                  Add shipping info, return policy, FAQs, support hours,
-                  payment methods, and anything your AI should know.
+                  Add FAQs, shipping details, refund policies, payment information, and customer support instructions for AI training.
                 </p>
 
               </div>
