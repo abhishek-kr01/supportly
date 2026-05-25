@@ -1,20 +1,32 @@
 (function () {
 
-    // Prevent duplicate widget injection
-    if (window.__SUPPORT_AI_WIDGET__) return;
-    window.__SUPPORT_AI_WIDGET__ = true;
+    // =========================
+    // PREVENT DUPLICATE WIDGET
+    // =========================
+
+    if (window.__SUPPORTLY_WIDGET__) return;
+
+    window.__SUPPORTLY_WIDGET__ = true;
 
     // =========================
     // CONFIG
     // =========================
 
-    const api_Url = "https://supportly-chi.vercel.app/api/chat";
+    const API_URL =
+        "https://supportly-chi.vercel.app/api/chat";
 
-    const scriptTag = document.currentScript;
-    const ownerId = scriptTag.getAttribute("data-owner-id");
+    const scriptTag =
+        document.currentScript;
+
+    const ownerId =
+        scriptTag?.getAttribute("data-owner-id");
 
     if (!ownerId) {
-        console.error("Owner ID not found");
+
+        console.error(
+            "Supportly: Owner ID not found"
+        );
+
         return;
     }
 
@@ -22,9 +34,10 @@
     // CHAT BUTTON
     // =========================
 
-    const button = document.createElement("div");
+    const button =
+        document.createElement("div");
 
-    button.textContent = "🗨️";
+    button.textContent = "💬";
 
     Object.assign(button.style, {
         position: "fixed",
@@ -40,14 +53,15 @@
         justifyContent: "center",
         cursor: "pointer",
         fontSize: "22px",
-        boxShadow: "0 15px 40px rgba(0,0,0,0.35)",
+        boxShadow:
+            "0 15px 40px rgba(0,0,0,0.35)",
         zIndex: "999999",
         transition: "all 0.2s ease",
         userSelect: "none",
     });
 
     button.onmouseenter = () => {
-        button.style.transform = "scale(1.05)";
+        button.style.transform = "scale(1.06)";
     };
 
     button.onmouseleave = () => {
@@ -60,7 +74,8 @@
     // CHAT BOX
     // =========================
 
-    const box = document.createElement("div");
+    const box =
+        document.createElement("div");
 
     Object.assign(box.style, {
         position: "fixed",
@@ -70,17 +85,21 @@
         height: "500px",
         background: "#fff",
         borderRadius: "18px",
-        boxShadow: "0 25px 60px rgba(0,0,0,0.25)",
+        boxShadow:
+            "0 25px 60px rgba(0,0,0,0.25)",
         display: "none",
         flexDirection: "column",
         overflow: "hidden",
         zIndex: "999999",
-        fontFamily: "Inter, system-ui, sans-serif",
+        fontFamily:
+            "Inter, system-ui, sans-serif",
         border: "1px solid #e5e7eb",
+        animation:
+            "supportlyFadeIn 0.2s ease",
     });
 
     box.innerHTML = `
-    
+
     <!-- HEADER -->
     <div style="
         background:#000;
@@ -91,7 +110,10 @@
         align-items:center;
     ">
         <div>
-            <div style="font-size:14px;font-weight:600;">
+            <div style="
+                font-size:14px;
+                font-weight:600;
+            ">
                 Customer Support
             </div>
 
@@ -104,7 +126,7 @@
             </div>
         </div>
 
-        <span 
+        <span
             id="chat-close"
             style="
                 cursor:pointer;
@@ -117,7 +139,7 @@
     </div>
 
     <!-- MESSAGES -->
-    <div 
+    <div
         id="chat-messages"
         style="
             flex:1;
@@ -148,7 +170,6 @@
                 border-radius:10px;
                 font-size:13px;
                 outline:none;
-                transition:0.2s;
             "
         />
 
@@ -177,13 +198,20 @@
     // =========================
 
     button.onclick = () => {
+
         box.style.display =
             box.style.display === "none"
                 ? "flex"
                 : "none";
+
+        if (box.style.display === "flex") {
+            input.focus();
+        }
     };
 
-    document.querySelector("#chat-close").onclick = () => {
+    document.querySelector(
+        "#chat-close"
+    ).onclick = () => {
         box.style.display = "none";
     };
 
@@ -191,9 +219,14 @@
     // ELEMENTS
     // =========================
 
-    const input = document.querySelector("#chat-input");
-    const sendBtn = document.querySelector("#chat-send");
-    const messageArea = document.querySelector("#chat-messages");
+    const input =
+        document.querySelector("#chat-input");
+
+    const sendBtn =
+        document.querySelector("#chat-send");
+
+    const messageArea =
+        document.querySelector("#chat-messages");
 
     // =========================
     // ADD MESSAGE
@@ -201,9 +234,9 @@
 
     function addMessage(text, from) {
 
-        const bubble = document.createElement("div");
+        const bubble =
+            document.createElement("div");
 
-        // SECURITY FIX
         bubble.textContent = text;
 
         Object.assign(bubble.style, {
@@ -252,7 +285,7 @@
     // =========================
 
     addMessage(
-        "Hi 👋 How can we help you today?",
+        "Hi 👋 Welcome! How can we help you today?",
         "ai"
     );
 
@@ -262,23 +295,30 @@
 
     async function sendMessage() {
 
-        const text = input.value.trim();
+        const text =
+            input.value.trim();
 
         if (!text) return;
 
-        // User Message
+        // User message
+
         addMessage(text, "user");
 
         input.value = "";
 
-        // Disable button
+        // Disable send
+
         sendBtn.disabled = true;
+
         sendBtn.textContent = "...";
 
-        // Typing Indicator
-        const typing = document.createElement("div");
+        // Typing indicator
 
-        typing.textContent = "AI is typing...";
+        const typing =
+            document.createElement("div");
+
+        typing.textContent =
+            "AI is typing...";
 
         Object.assign(typing.style, {
             fontSize: "12px",
@@ -294,27 +334,43 @@
 
         try {
 
-            const response = await fetch(api_Url, {
-                method: "POST",
+            const response =
+                await fetch(API_URL, {
 
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                    method: "POST",
 
-                body: JSON.stringify({
-                    ownerId,
-                    message: text,
-                }),
-            });
+                    headers: {
+                        "Content-Type":
+                            "application/json",
+                    },
+
+                    body: JSON.stringify({
+                        ownerId,
+                        message: text,
+                    }),
+                });
+
+            const data =
+                await response.json();
 
             if (!response.ok) {
-                throw new Error("API Error");
+
+                throw new Error(
+                    data?.message ||
+                    "API Error"
+                );
             }
 
-            const data = await response.json();
-
             // Remove typing
-            messageArea.removeChild(typing);
+
+            if (
+                messageArea.contains(typing)
+            ) {
+
+                messageArea.removeChild(
+                    typing
+                );
+            }
 
             addMessage(
                 data.reply ||
@@ -326,8 +382,13 @@
 
             console.error(error);
 
-            if (messageArea.contains(typing)) {
-                messageArea.removeChild(typing);
+            if (
+                messageArea.contains(typing)
+            ) {
+
+                messageArea.removeChild(
+                    typing
+                );
             }
 
             addMessage(
@@ -338,6 +399,7 @@
         } finally {
 
             sendBtn.disabled = false;
+
             sendBtn.textContent = "Send";
 
             input.focus();
@@ -350,10 +412,14 @@
 
     sendBtn.onclick = sendMessage;
 
-    input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            sendMessage();
+    input.addEventListener(
+        "keydown",
+        (e) => {
+
+            if (e.key === "Enter") {
+                sendMessage();
+            }
         }
-    });
+    );
 
 })();
