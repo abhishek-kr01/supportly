@@ -8,10 +8,14 @@
     // CONFIG
     // =========================
 
-    const api_Url = "https://supportly-chi.vercel.app/api/chat";
+    const api_Url =
+        "https://supportly-chi.vercel.app/api/chat";
 
-    const scriptTag = document.currentScript;
-    const ownerId = scriptTag.getAttribute("data-owner-id");
+    const scriptTag =
+        document.currentScript;
+
+    const ownerId =
+        scriptTag.getAttribute("data-owner-id");
 
     if (!ownerId) {
         console.error("Owner ID not found");
@@ -22,36 +26,41 @@
     // CHAT BUTTON
     // =========================
 
-    const button = document.createElement("div");
+    const button =
+        document.createElement("div");
 
-    button.textContent = "🗨️";
+    button.textContent = "💬";
 
     Object.assign(button.style, {
         position: "fixed",
         bottom: "24px",
         right: "24px",
-        width: "58px",
-        height: "58px",
+        width: "62px",
+        height: "62px",
         borderRadius: "50%",
-        background: "#000",
-        color: "#fff",
+        background:
+            "linear-gradient(135deg,#ffffff,#d4d4d4)",
+        color: "#000",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         cursor: "pointer",
-        fontSize: "22px",
-        boxShadow: "0 15px 40px rgba(0,0,0,0.35)",
+        fontSize: "24px",
+        boxShadow:
+            "0 15px 50px rgba(0,0,0,0.45)",
         zIndex: "999999",
-        transition: "all 0.2s ease",
+        transition: "all 0.25s ease",
         userSelect: "none",
     });
 
     button.onmouseenter = () => {
-        button.style.transform = "scale(1.05)";
+        button.style.transform =
+            "scale(1.08)";
     };
 
     button.onmouseleave = () => {
-        button.style.transform = "scale(1)";
+        button.style.transform =
+            "scale(1)";
     };
 
     document.body.appendChild(button);
@@ -60,47 +69,62 @@
     // CHAT BOX
     // =========================
 
-    const box = document.createElement("div");
+    const box =
+        document.createElement("div");
 
     Object.assign(box.style, {
         position: "fixed",
-        bottom: "94px",
+        bottom: "98px",
         right: "24px",
-        width: "min(92vw, 340px)",
-        height: "500px",
-        background: "#fff",
-        borderRadius: "18px",
-        boxShadow: "0 25px 60px rgba(0,0,0,0.25)",
+        width: "min(92vw, 370px)",
+        height: "620px",
+        background:
+            "rgba(15,15,15,0.92)",
+        backdropFilter: "blur(18px)",
+        WebkitBackdropFilter:
+            "blur(18px)",
+        borderRadius: "28px",
+        boxShadow:
+            "0 20px 80px rgba(0,0,0,0.45)",
         display: "none",
         flexDirection: "column",
         overflow: "hidden",
         zIndex: "999999",
-        fontFamily: "Inter, system-ui, sans-serif",
-        border: "1px solid #e5e7eb",
+        fontFamily:
+            "Inter, system-ui, sans-serif",
+        border:
+            "1px solid rgba(255,255,255,0.08)",
     });
 
     box.innerHTML = `
-    
+
     <!-- HEADER -->
     <div style="
-        background:#000;
+        background:rgba(255,255,255,0.04);
+        backdrop-filter:blur(10px);
         color:#fff;
-        padding:14px 16px;
+        padding:18px;
         display:flex;
         justify-content:space-between;
         align-items:center;
+        border-bottom:1px solid rgba(255,255,255,0.06);
     ">
+
         <div>
-            <div style="font-size:14px;font-weight:600;">
-                Customer Support
+            <div style="
+                font-size:15px;
+                font-weight:600;
+                letter-spacing:-0.2px;
+            ">
+                AI Customer Support
             </div>
 
             <div style="
-                font-size:11px;
-                opacity:0.7;
-                margin-top:2px;
+                font-size:12px;
+                opacity:0.65;
+                margin-top:4px;
             ">
-                We usually reply instantly
+                Usually replies instantly
             </div>
         </div>
 
@@ -108,8 +132,9 @@
             id="chat-close"
             style="
                 cursor:pointer;
-                font-size:18px;
+                font-size:22px;
                 user-select:none;
+                opacity:0.7;
             "
         >
             ×
@@ -121,9 +146,9 @@
         id="chat-messages"
         style="
             flex:1;
-            padding:14px;
+            padding:16px;
             overflow-y:auto;
-            background:#f9fafb;
+            background:#0f0f0f;
             display:flex;
             flex-direction:column;
         "
@@ -132,41 +157,44 @@
     <!-- INPUT -->
     <div style="
         display:flex;
-        gap:8px;
-        padding:10px;
-        border-top:1px solid #e5e7eb;
-        background:#fff;
+        gap:10px;
+        padding:14px;
+        border-top:1px solid rgba(255,255,255,0.06);
+        background:#0f0f0f;
     ">
+
         <input
             id="chat-input"
             type="text"
-            placeholder="Type your message..."
+            placeholder="Ask about shipping, refunds, orders..."
             style="
                 flex:1;
-                padding:10px 12px;
-                border:1px solid #d1d5db;
-                border-radius:10px;
+                padding:14px 16px;
+                border:1px solid rgba(255,255,255,0.08);
+                border-radius:18px;
                 font-size:13px;
                 outline:none;
-                transition:0.2s;
+                background:rgba(255,255,255,0.05);
+                color:white;
             "
         />
 
         <button
             id="chat-send"
             style="
-                padding:10px 14px;
+                padding:0 18px;
                 border:none;
-                background:#000;
-                color:#fff;
-                border-radius:10px;
+                background:white;
+                color:black;
+                border-radius:18px;
                 font-size:13px;
                 cursor:pointer;
-                font-weight:500;
+                font-weight:600;
             "
         >
             Send
         </button>
+
     </div>
     `;
 
@@ -177,13 +205,17 @@
     // =========================
 
     button.onclick = () => {
+
         box.style.display =
             box.style.display === "none"
                 ? "flex"
                 : "none";
     };
 
-    document.querySelector("#chat-close").onclick = () => {
+    document.querySelector(
+        "#chat-close"
+    ).onclick = () => {
+
         box.style.display = "none";
     };
 
@@ -191,9 +223,14 @@
     // ELEMENTS
     // =========================
 
-    const input = document.querySelector("#chat-input");
-    const sendBtn = document.querySelector("#chat-send");
-    const messageArea = document.querySelector("#chat-messages");
+    const input =
+        document.querySelector("#chat-input");
+
+    const sendBtn =
+        document.querySelector("#chat-send");
+
+    const messageArea =
+        document.querySelector("#chat-messages");
 
     // =========================
     // ADD MESSAGE
@@ -201,18 +238,25 @@
 
     function addMessage(text, from) {
 
-        const bubble = document.createElement("div");
+        const bubble =
+            document.createElement("div");
 
-        // SECURITY FIX
         bubble.textContent = text;
 
         Object.assign(bubble.style, {
-            maxWidth: "82%",
-            padding: "10px 14px",
-            borderRadius: "16px",
-            fontSize: "13px",
-            lineHeight: "1.5",
-            marginBottom: "10px",
+
+            maxWidth: "85%",
+
+            padding: "14px 16px",
+
+            borderRadius: "22px",
+
+            fontSize: "14px",
+
+            lineHeight: "1.7",
+
+            marginBottom: "12px",
+
             alignSelf:
                 from === "user"
                     ? "flex-end"
@@ -220,25 +264,33 @@
 
             background:
                 from === "user"
-                    ? "#000"
-                    : "#e5e7eb",
+                    ? "#ffffff"
+                    : "rgba(255,255,255,0.06)",
 
             color:
                 from === "user"
-                    ? "#fff"
-                    : "#111827",
+                    ? "#000"
+                    : "#fff",
+
+            border:
+                from === "user"
+                    ? "none"
+                    : "1px solid rgba(255,255,255,0.06)",
 
             borderTopRightRadius:
                 from === "user"
-                    ? "4px"
-                    : "16px",
+                    ? "6px"
+                    : "22px",
 
             borderTopLeftRadius:
                 from === "user"
-                    ? "16px"
-                    : "4px",
+                    ? "22px"
+                    : "6px",
 
             wordBreak: "break-word",
+
+            animation:
+                "fadeUp 0.25s ease",
         });
 
         messageArea.appendChild(bubble);
@@ -252,7 +304,7 @@
     // =========================
 
     addMessage(
-        "Hi 👋 How can we help you today?",
+        "Hello 👋 How can we help you today?",
         "ai"
     );
 
@@ -262,7 +314,8 @@
 
     async function sendMessage() {
 
-        const text = input.value.trim();
+        const text =
+            input.value.trim();
 
         if (!text) return;
 
@@ -273,16 +326,20 @@
 
         // Disable button
         sendBtn.disabled = true;
+
         sendBtn.textContent = "...";
 
         // Typing Indicator
-        const typing = document.createElement("div");
+        const typing =
+            document.createElement("div");
 
-        typing.textContent = "AI is typing...";
+        typing.textContent =
+            "AI is typing...";
 
         Object.assign(typing.style, {
             fontSize: "12px",
-            color: "#6b7280",
+            color:
+                "rgba(255,255,255,0.55)",
             marginBottom: "10px",
             alignSelf: "flex-start",
         });
@@ -294,31 +351,47 @@
 
         try {
 
-            const response = await fetch(api_Url, {
-                method: "POST",
+            const response =
+                await fetch(api_Url, {
 
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                    method: "POST",
 
-                body: JSON.stringify({
-                    ownerId,
-                    message: text,
-                }),
-            });
+                    headers: {
+                        "Content-Type":
+                            "application/json",
+                    },
+
+                    body: JSON.stringify({
+                        ownerId,
+                        message: text,
+                    }),
+                });
 
             if (!response.ok) {
-                throw new Error("API Error");
+                throw new Error(
+                    "API Error"
+                );
             }
 
-            const data = await response.json();
+            const data =
+                await response.json();
 
             // Remove typing
-            messageArea.removeChild(typing);
+            messageArea.removeChild(
+                typing
+            );
+
+            // CLEAN MARKDOWN
+            const cleanReply =
+                (
+                    data.reply ||
+                    "No response received"
+                )
+                    .replace(/\*\*/g, "")
+                    .replace(/\*/g, "");
 
             addMessage(
-                data.reply ||
-                "No response received",
+                cleanReply,
                 "ai"
             );
 
@@ -326,8 +399,13 @@
 
             console.error(error);
 
-            if (messageArea.contains(typing)) {
-                messageArea.removeChild(typing);
+            if (
+                messageArea.contains(typing)
+            ) {
+
+                messageArea.removeChild(
+                    typing
+                );
             }
 
             addMessage(
@@ -338,7 +416,9 @@
         } finally {
 
             sendBtn.disabled = false;
-            sendBtn.textContent = "Send";
+
+            sendBtn.textContent =
+                "Send";
 
             input.focus();
         }
@@ -350,10 +430,14 @@
 
     sendBtn.onclick = sendMessage;
 
-    input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            sendMessage();
+    input.addEventListener(
+        "keydown",
+        (e) => {
+
+            if (e.key === "Enter") {
+                sendMessage();
+            }
         }
-    });
+    );
 
 })();
