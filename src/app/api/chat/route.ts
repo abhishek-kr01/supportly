@@ -16,10 +16,7 @@ const ai = new GoogleGenAI({
 // =========================
 
 const corsHeaders = {
-    "Access-Control-Allow-Origin":
-        process.env.NODE_ENV === "production"
-            ? "https://your-frontend-domain.com"
-            : "*",
+    "Access-Control-Allow-Origin": "*",
 
     "Access-Control-Allow-Methods":
         "POST, OPTIONS",
