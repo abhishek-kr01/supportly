@@ -39,8 +39,8 @@
         height: "62px",
         borderRadius: "50%",
         background:
-            "linear-gradient(135deg,#ffffff,#d4d4d4)",
-        color: "#000",
+            "linear-gradient(135deg,#18181b,#09090b)",
+        color: "#ffffff",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
