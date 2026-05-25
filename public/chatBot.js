@@ -8,7 +8,7 @@
     // CONFIG
     // =========================
 
-    const api_Url = "https://support-ai-tau.vercel.app/api/chat";
+    const api_Url = "https://supportly-chi.vercel.app/api/chat";
 
     const scriptTag = document.currentScript;
     const ownerId = scriptTag.getAttribute("data-owner-id");
